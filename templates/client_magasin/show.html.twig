@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ClientMagasin{% endblock %}
+
+{% block body %}
+    <h1>ClientMagasin</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ client_magasin.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_client_magasin_index') }}">back to list</a>
+
+    <a href="{{ path('app_client_magasin_edit', {'id': client_magasin.id}) }}">edit</a>
+
+    {{ include('client_magasin/_delete_form.html.twig') }}
+{% endblock %}

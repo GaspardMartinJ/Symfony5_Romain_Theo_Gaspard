@@ -10,7 +10,7 @@ class Materiel
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column]
+    #[ORM\Column(name: 'ID', type: 'integer', nullable: false)]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
@@ -46,5 +46,10 @@ class Materiel
         $this->Prix = $Prix;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->Type;
     }
 }

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ClientMateriel{% endblock %}
+
+{% block body %}
+    <h1>Create new ClientMateriel</h1>
+
+    {{ include('client_materiel/_form.html.twig') }}
+
+    <a href="{{ path('app_client_materiel_index') }}">back to list</a>
+{% endblock %}

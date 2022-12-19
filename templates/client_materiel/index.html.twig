@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ClientMateriel index{% endblock %}
+
+{% block body %}
+    <h1>ClientMateriel index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for client_materiel in client_materiels %}
+            <tr>
+                <td>{{ client_materiel.id }}</td>
+                <td>
+                    <a href="{{ path('app_client_materiel_show', {'id': client_materiel.id}) }}">show</a>
+                    <a href="{{ path('app_client_materiel_edit', {'id': client_materiel.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_client_materiel_new') }}">Create new</a>
+    <br>
+    <a href="{{ path('app_index') }}">Back to home page</a>
+{% endblock %}
